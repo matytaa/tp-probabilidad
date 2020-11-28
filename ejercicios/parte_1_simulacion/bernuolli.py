@@ -1,8 +1,9 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import collections
-from scipy import stats
 
+## Ejercicio 1
+# Utilizando únicamente la función random de su lenguaje (la función que genera un número aleatorio uniforme entre 0 y 1),
+# implemente una función que genere un número distribuido Bernoulli con probabilidad p.
 
 # La Distribución de Bernoulli describe un experimento probabilístico en donde el ensayo
 # tiene dos posibles resultados, éxito o fracaso.

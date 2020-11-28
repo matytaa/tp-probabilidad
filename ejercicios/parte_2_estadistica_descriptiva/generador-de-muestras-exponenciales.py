@@ -1,7 +1,7 @@
 import numpy as np
 import math
 import collections
-from funciones.exponencial import fn_exponencial_random
+from ejercicios.parte_1_simulacion.exponencial import fn_exponencial_random
 from histogramas.histograma import graficar_histograma
 # # Parte 2: Estadística descriptiva
 #Ahora vamos a aplicar las técnicas vistas en la materia al estudio de algunas muestras de datos.

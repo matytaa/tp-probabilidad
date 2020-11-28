@@ -1,4 +1,4 @@
-from funciones.binomial import fn_binomial_array
+from ejercicios.parte_1_simulacion.binomial import fn_binomial_array
 from histogramas.histograma import graficar_histograma
 import collections
 

@@ -1,8 +1,7 @@
 import collections
 import matplotlib.pyplot as plt
-from funciones.binomial import fn_binomial_array
 from statsmodels.distributions.empirical_distribution import ECDF
-
+from ejercicios.parte_1_simulacion.binomial import fn_binomial_array
 # # Ejercicio 3
 # Generar una muestra de números Bin(10, 0.3) de tamaño de muestra N = 50.
 # Construir la función de distribución empírica de dicha muestra.

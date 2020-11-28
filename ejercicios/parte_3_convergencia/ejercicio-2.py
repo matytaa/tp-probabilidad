@@ -1,7 +1,7 @@
-from funciones.binomial import fn_binomial_array
-from funciones.binomial import esperanza
-from funciones.binomial import varianza
-from funciones.normalizacion import normalizar
+from ejercicios.parte_1_simulacion.binomial import fn_binomial_array
+from ejercicios.parte_1_simulacion.binomial import esperanza
+from ejercicios.parte_1_simulacion.binomial import varianza
+from ejercicios.parte_3_convergencia.normalizacion import normalizar
 from histogramas.histograma import graficar_histograma
 import collections
 

@@ -1,6 +1,6 @@
-from distribuciones.normal import fn_normal_array
-from distribuciones.normal import esperanza
-from distribuciones.normal import varianza
+from ejercicios.parte_1_simulacion.normal import fn_normal_array
+from ejercicios.parte_1_simulacion.normal import esperanza
+from ejercicios.parte_1_simulacion.normal import varianza
 
 # # Parte 4
 # # Ejercicio 1
