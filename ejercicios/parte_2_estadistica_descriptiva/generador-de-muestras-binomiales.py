@@ -17,6 +17,22 @@ valor_limite = 5
 casos = 50
 n = 10
 p = 0.3
-valores_e3 = fn_binomial_array(casos, n, p)
-resultado = función_de_distribución_acumulativa_empirica(valores_e3, valor_limite)
+valores_primera_tirada = fn_binomial_array(casos, n, p)
+resultado = función_de_distribución_acumulativa_empirica(valores_primera_tirada, valor_limite)
+print("bla: " + str(valores_primera_tirada))
 print(resultado)
+
+
+## Ejercicio 4
+valores_segunda_tirada = fn_binomial_array(casos, n, p)
+resultado2 = función_de_distribución_acumulativa_empirica(valores_segunda_tirada, valor_limite)
+#print(resultado2)
+
+## Ejercicio 5
+valores_tercera_tirada = fn_binomial_array(casos, n, p)
+resultado3 = función_de_distribución_acumulativa_empirica(valores_segunda_tirada, valor_limite)
+#print(resultado3)
+
+valores_tercera_tirada = fn_binomial_array(casos, n, p)
+resultado4 = función_de_distribución_acumulativa_empirica(valores_segunda_tirada, valor_limite)
+#print(resultado4)
