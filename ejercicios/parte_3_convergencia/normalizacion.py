@@ -1,22 +1,14 @@
 import numpy as np
 import pandas as pd
 
-# Para normalizar el valor, tomo la siguiente normalización = ( x – min(x) ) / ( max(x) – min(x) )
-def normalizar(valor_a_normalizar):
-    minimo = (min(valor_a_normalizar))
-    maximo = (max(valor_a_normalizar))
+def normalizar(muestra_a_normalizar, media_muestral, varianza):
+    normal = np.zeros(len(muestra_a_normalizar))
+    for i in range(0, len(muestra_a_normalizar)):
+        valor = muestra_a_normalizar[i]
+        calculo_a = valor - media_muestral
+        calculo = calculo_a / varianza
+        normal[i] = calculo
 
-    calculo_b = maximo - minimo
-
-    normal = np.zeros((200))
-
-    for i in range(0, 200):
-        valor = valor_a_normalizar[i - 1]
-        calculo_a = valor - minimo
-        calculo = calculo_a / calculo_b
-        normal[i - 1] = calculo
-
-    print("Normal: "+ str(normal))
-    df = pd.DataFrame({"valor": valor_a_normalizar, "normalizado": normal})
+    df = pd.DataFrame({"valor": muestra_a_normalizar, "estandarizado": normal})
     print(df)
     return normal

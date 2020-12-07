@@ -6,23 +6,19 @@ import math
 # Usamos el método de Box-muller para generar numeros random siguiendo una distribucion normal
 # https://es.wikipedia.org/wiki/M%C3%A9todo_de_Box-Muller
 
-def fn_gaussian_random(mean, stddev):
+def random_gaussiano(mean, desviacion_estandar):
     theta = 2 * math.pi * np.random.uniform(0,1)
-    rho = math.sqrt(-2 * math.log10(1 - np.random.uniform(0,1)))
-    scale = stddev * rho
-    x = mean + scale * math.cos(theta)
+    rho = math.sqrt(-2 * np.log(1 - np.random.uniform(0,1)))
+    scale = desviacion_estandar * rho
     y = mean + scale * math.sin(theta)
     return y
 
-def fn_normal_array(casos,mean,stddev):
+def fn_normal_array(casos, media, desviacion_estandar):
     valores = np.zeros(casos)
     for i in range(0,casos):
-        valores[i-1] = fn_gaussian_random(mean, stddev)
+        valores[i-1] = random_gaussiano(media, desviacion_estandar)
     return valores
 
-
-val = fn_gaussian_random(2, 3)
-print(val)
-
-val = fn_normal_array(10,100, 5)
-print(val)
+normal = fn_normal_array(30, 100, 5)
+print(normal)
+print(np.mean(normal))
