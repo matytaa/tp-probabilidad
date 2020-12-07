@@ -1,5 +1,5 @@
 import numpy as np
-from ejercicios.parte_1_simulacion.binomial import fn_binomial_array
+from ejercicios.parte_1_simulacion.binomial import obtener_muestra_binomial
 from ejercicios.parte_2_estadistica_descriptiva.funcion_de_distribucion_empirica import funcion_de_distribución_empirica_n
 from ejercicios.parte_2_estadistica_descriptiva.muestreo_de_bootstrap import sampleo_bootstrap
 from funciones.funciones import media_muestral
@@ -11,7 +11,7 @@ def repeticion_ejercicios_3_y_4():
     n = 10
     p = 0.3
 
-    array_de_valores = fn_binomial_array(casos, n, p)
+    array_de_valores = obtener_muestra_binomial(casos, n, p)
     distribucion_empirica = funcion_de_distribución_empirica_n(array_de_valores)
 
     valores = np.zeros(len(distribucion_empirica))

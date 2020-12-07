@@ -1,5 +1,5 @@
 import numpy as np
-from ejercicios.parte_1_simulacion.exponencial import fn_exponencial_random
+from ejercicios.parte_1_simulacion.exponencial import obtener_exponencial_random
 from funciones.funciones import media_muestral, varianza_muestral
 
 ## Parte 2: Estadística descriptiva
@@ -13,5 +13,5 @@ from funciones.funciones import media_muestral, varianza_muestral
 def fn_generador_de_muestras_numeros_random_con_dist_exponencial(n, _lambda):
     valores = np.zeros(n)
     for i in range(0, n):
-        valores[i] = fn_exponencial_random(_lambda)
+        valores[i] = obtener_exponencial_random(_lambda)
     return valores, media_muestral(valores), varianza_muestral(valores)

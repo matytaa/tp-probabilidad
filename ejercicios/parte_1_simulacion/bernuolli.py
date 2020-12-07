@@ -21,12 +21,12 @@ def fn_bernoulli_random(p):
     else:
         return 1
 
-def fn_bernoulli_array(x, p):
+def muestra_bernoulli_random(x, p):
     valores = np.zeros((x))
     for i in range(0, x):
         valores[i - 1] = fn_bernoulli_random(p)
     return valores
 
-prueba_bernoulli = fn_bernoulli_array(100, 0.4)
+prueba_bernoulli = muestra_bernoulli_random(100, 0.4)
 print(prueba_bernoulli)
 print("Comprobacion, agrupacion por valores ==> %s" % collections.Counter(prueba_bernoulli))

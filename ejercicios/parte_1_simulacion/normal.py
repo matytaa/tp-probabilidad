@@ -13,12 +13,12 @@ def random_gaussiano(mean, desviacion_estandar):
     y = mean + scale * math.sin(theta)
     return y
 
-def fn_normal_array(casos, media, desviacion_estandar):
+def obtener_muestras_normales(casos, media, desviacion_estandar):
     valores = np.zeros(casos)
     for i in range(0,casos):
         valores[i-1] = random_gaussiano(media, desviacion_estandar)
     return valores
 
-normal = fn_normal_array(30, 100, 5)
+normal = obtener_muestras_normales(30, 100, 5)
 print(normal)
 print(np.mean(normal))

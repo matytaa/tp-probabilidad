@@ -1,6 +1,6 @@
 import numpy as np
 import collections
-from ejercicios.parte_1_simulacion.binomial import fn_binomial_array
+from ejercicios.parte_1_simulacion.binomial import obtener_muestra_binomial
 from ejercicios.parte_2_estadistica_descriptiva.funcion_de_distribucion_empirica import funcion_de_distribución_empirica_n
 from ejercicios.parte_2_estadistica_descriptiva.funcion_de_distribucion_empirica import graficar_diagrama_acumulada
 from ejercicios.parte_2_estadistica_descriptiva.muestreo_de_bootstrap import sampleo_bootstrap
@@ -15,7 +15,7 @@ from histogramas.histograma import frecuencia_relativa
 casos = 50
 n = 10
 p = 0.3
-muestras_binomiales = fn_binomial_array(casos, n, p)
+muestras_binomiales = obtener_muestra_binomial(casos, n, p)
 distribucion_empirica = funcion_de_distribución_empirica_n(muestras_binomiales)
 print("muestrar binomial: " + str(sorted(muestras_binomiales)))
 print("F de distribucion empirica: ", distribucion_empirica)

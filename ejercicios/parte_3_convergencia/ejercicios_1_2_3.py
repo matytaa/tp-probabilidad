@@ -4,7 +4,7 @@ import pandas as pd
 from funciones.funciones import media_muestral
 from funciones.funciones import varianza_muestral
 from histogramas.histograma import frecuencia_relativa
-from ejercicios.parte_1_simulacion.binomial import fn_binomial_array
+from ejercicios.parte_1_simulacion.binomial import obtener_muestra_binomial
 from ejercicios.parte_3_convergencia.normalizacion import normalizar
 
 ## Parte 3: Convergencia
@@ -16,21 +16,21 @@ from ejercicios.parte_3_convergencia.normalizacion import normalizar
 # CONCLUSION: Teniendo en cuenta el p=0.4, puedo estimar que el pico de frencuencia en cada uno, va a estar determinado por el
 # valor del rango que sea la esperanza (n*p) aproximadamente.
 
-val_e1_p3_10 = fn_binomial_array(100, 10, 0.4)
+val_e1_p3_10 = obtener_muestra_binomial(100, 10, 0.4)
 print(val_e1_p3_10)
 frecuencia_relativa(val_e1_p3_10)
 
 
-val_e1_p3_20 = fn_binomial_array(100, 20, 0.4)
+val_e1_p3_20 = obtener_muestra_binomial(100, 20, 0.4)
 print(val_e1_p3_20)
 frecuencia_relativa(val_e1_p3_20)
 
 
-val_e1_p3_50 = fn_binomial_array(100,50,0.4)
+val_e1_p3_50 = obtener_muestra_binomial(100, 50, 0.4)
 print(val_e1_p3_50)
 frecuencia_relativa(val_e1_p3_50)
 
-val_e1_p3_100 = fn_binomial_array(100,100,0.4)
+val_e1_p3_100 = obtener_muestra_binomial(100, 100, 0.4)
 print(val_e1_p3_100)
 frecuencia_relativa(val_e1_p3_100)
 
@@ -40,7 +40,7 @@ frecuencia_relativa(val_e1_p3_100)
 # Elija la muestra de tamaño 200 y calcule la media y desviación estándar muestral. Luego, normalice cada dato de la muestra
 # y grafique el histograma de la muestra normalizada. Justifique lo que observa.
 
-val_e2_p3_200 = fn_binomial_array(200,10,0.4)
+val_e2_p3_200 = obtener_muestra_binomial(200, 10, 0.4)
 val_e2_p3_200 = sorted(val_e2_p3_200)
 
 print(val_e2_p3_200)

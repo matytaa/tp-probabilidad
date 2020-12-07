@@ -1,5 +1,5 @@
 import scipy.stats as stats
-from ejercicios.parte_1_simulacion.normal import fn_normal_array
+from ejercicios.parte_1_simulacion.normal import obtener_muestras_normales
 from funciones.funciones import media_muestral
 from funciones.funciones import varianza_muestral
 from funciones.funciones import con_varianza_conocida
@@ -12,14 +12,14 @@ from funciones.funciones import verificar_hipotesis_alternativa
 # Generar dos muestras N(100, 5), una de tamaño n = 10 y otra de tamaño n = 30.
 # Obtener estimaciones puntuales de su media y varianza.
 
-val_e1_p4_10 = fn_normal_array(10,100, 5)
+val_e1_p4_10 = obtener_muestras_normales(10, 100, 5)
 print(val_e1_p4_10)
 
 media_muestral_n10 = media_muestral(val_e1_p4_10)
 print("Media muestral n=10: ",media_muestral_n10)
 print("Varianza muestral: ", varianza_muestral(val_e1_p4_10))
 
-val_e1_p4_30 = fn_normal_array(30,100, 5)
+val_e1_p4_30 = obtener_muestras_normales(30, 100, 5)
 print(val_e1_p4_30)
 
 media_muestral_n30 = media_muestral(val_e1_p4_30)

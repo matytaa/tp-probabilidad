@@ -1,5 +1,5 @@
 import collections
-from ejercicios.parte_1_simulacion.binomial import fn_binomial_array
+from ejercicios.parte_1_simulacion.binomial import obtener_muestra_binomial
 # # Ejercicio 3
 # Generar una muestra de números Bin(10, 0.3) de tamaño de muestra N = 50.
 # Construir la función de distribución empírica de dicha muestra.
@@ -17,7 +17,7 @@ valor_limite = 5
 casos = 50
 n = 10
 p = 0.3
-valores_primera_tirada = fn_binomial_array(casos, n, p)
+valores_primera_tirada = obtener_muestra_binomial(casos, n, p)
 resultado = función_de_distribucion_acumulativa_empirica(valores_primera_tirada, valor_limite)
 
 print("bla: " + str(valores_primera_tirada))
@@ -25,15 +25,15 @@ print(resultado)
 
 
 ## Ejercicio 4
-valores_segunda_tirada = fn_binomial_array(casos, n, p)
+valores_segunda_tirada = obtener_muestra_binomial(casos, n, p)
 resultado2 = función_de_distribucion_acumulativa_empirica(valores_segunda_tirada, valor_limite)
 #print(resultado2)
 
 ## Ejercicio 5
-valores_tercera_tirada = fn_binomial_array(casos, n, p)
+valores_tercera_tirada = obtener_muestra_binomial(casos, n, p)
 resultado3 = función_de_distribucion_acumulativa_empirica(valores_segunda_tirada, valor_limite)
 #print(resultado3)
 
-valores_tercera_tirada = fn_binomial_array(casos, n, p)
+valores_tercera_tirada = obtener_muestra_binomial(casos, n, p)
 resultado4 = función_de_distribucion_acumulativa_empirica(valores_segunda_tirada, valor_limite)
 #print(resultado4)
