@@ -26,7 +26,7 @@ print("N=", 200)
 print("Media=", media)
 print("Varianza=", varianza)
 
-# OBSERVACION: Conforme aumente la cantidad de muestra, aumenta la varianza.
+# OBSERVACION: Conforme aumente la cantidad de muestra la esperanza y la varianza se deberían de estabilizar.
 
 
 ## Parte 2 Ejercicio 2
@@ -49,5 +49,4 @@ frecuencia_relativa_con_ancho(val_n200, 0.2)
 frecuencia_relativa_con_ancho(val_n200, 0.1)
 
 
-# OBSERVACIONES: Conforme es mas chico el ancho de banda, se agrupan menos los valores y mas detallada
-# la forma de la curva, disminuyen los valores en eje Y.
+# OBSERVACIONES: Al realizar los histogramas, conforme a la muestra aumenta el histograma refleja una exponencial.
