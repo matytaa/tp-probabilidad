@@ -1,4 +1,6 @@
 import scipy.stats as stats
+import math
+import numpy as np
 from ejercicios.parte_1_simulacion.normal import obtener_muestras_normales
 from funciones.funciones import media_muestral
 from funciones.funciones import varianza_muestral
@@ -57,7 +59,9 @@ confianza = 0.98
 limite_inferior, limite_superior = con_varianza_conocida(varianza, n, confianza, mu)
 print("Intervalo de confianza del 98% se encuentra entre: " + str(limite_inferior) + " <= mu <= " + str(limite_superior))
 
-
+###El nivel de confianza y la amplitud del intervalo varían conjuntamente, de forma que
+# un intervalo más amplio tendrá más probabilidad de acierto (mayor nivel de confianza),
+# mientras que para un intervalo más pequeño, que ofrece una estimación más precisa, aumenta su probabilidad de error.
 
 # # Parte 4 Ejercicio 3
 # Repita el punto anterior pero usando la varianza estimada s² , para la muestra de tamaño adecuado.
@@ -157,3 +161,81 @@ chi_cuadrado_calculado = (grados_libertad * s_cuadrado_l) / varianza_nueva
 
 beta = stats.chi2.cdf(chi_cuadrado_calculado, grados_libertad)
 print("La probabilidad de cometer error tipo II para n = 30 es:", beta)
+
+# # Parte 4 Ejercicio 5
+# Agrupando los datos en subgrupos de longitud 0,5, probar a nivel 0,99 la hipótesis de que la muestra proviene
+# de una distribución normal.
+# Partiendo del ejercicio 1 sabemos que sigue una distribución N(100, 5) para la muestra de n = 30
+
+val_e1_p4_30 = sorted(val_e1_p4_30)
+n = 30
+ancho = 0.5
+inicio = min(val_e1_p4_30)
+fin = max(val_e1_p4_30)
+
+n_bins = math.ceil((fin - inicio) / ancho)
+mu = 100
+sigma = 5
+
+h_nula = "la muestra proviene de una distribución normal"
+h_alternativa = "la muestra no proviene de una distribución normal"
+
+diccionario = np.zeros((n_bins, 4))
+
+for i in range(0, n_bins):
+    fin = inicio + ancho
+    frecuencia_observada = 0
+    for j in range(0, len(val_e1_p4_30)):
+        if (val_e1_p4_30[j] >= inicio and val_e1_p4_30[j] < fin or (
+                j == len(val_e1_p4_30) - 1 and val_e1_p4_30[j] == fin)):
+            frecuencia_observada += 1
+    if (i == 0):
+        zeta = (fin - mu) / sigma
+        probabilidad_intervalo = stats.norm.cdf(zeta)
+    else:
+        zeta_1 = (inicio - mu) / sigma
+        zeta_2 = (fin - mu) / sigma
+        probabilidad_intervalo = stats.norm.cdf(zeta_2) - stats.norm.cdf(zeta_1)
+
+    frecuencia_esperada = probabilidad_intervalo * n
+    diccionario[i][0] = inicio
+    diccionario[i][1] = fin
+    diccionario[i][2] = frecuencia_observada
+    diccionario[i][3] = frecuencia_esperada
+    inicio = fin
+
+frecuencia_observada = 0
+frecuencia_esperada = 0
+estadistico_observado = 0
+contador_intervalos = 0
+for i in range(0, len(diccionario)):
+    contador = 0
+    frecuencia_observada += diccionario[i][2]
+    frecuencia_esperada += diccionario[i][3]
+    contador += 1
+    if (frecuencia_observada >= 5):
+        i += contador
+
+        if (i == len(diccionario) - 1 and diccionario[i][2] < 5):
+            frecuencia_observada += diccionario[i][2]
+            frecuencia_esperada += diccionario[i][3]
+
+        contador_intervalos += 1
+        resta = frecuencia_observada - frecuencia_esperada
+        estadistico_observado += math.pow(resta, 2) / frecuencia_esperada
+        print("f observada = ", frecuencia_observada)
+        print("f esperada = ", frecuencia_esperada)
+        print(" estadistico = ", estadistico_observado)
+        frecuencia_observada = 0
+        frecuencia_esperada = 0
+
+print("contador_intervalos ", contador_intervalos)
+estadistico_teorico = stats.chi2.ppf(0.99, contador_intervalos - 1)
+es_menor = estadistico_observado < estadistico_teorico
+
+print("estadistico observado= " + str(estadistico_observado) + " < estadistico teorico= " + str(estadistico_teorico))
+if (es_menor):
+    print("\nConclusión: no hay evidencia para rechazar h nula.")
+else:
+    print("\nConclusión: hay evidencia para rechazar h nula.")
+
