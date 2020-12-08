@@ -2,24 +2,27 @@ from ejercicios.parte_2_estadistica_descriptiva.generador_de_muestras_exponencia
 from histogramas.histograma import frecuencia_relativa_con_ancho
 
 ## Parte 2 Ejercicio 1
-# Generar tres muestras de números aleatorios Exp(0,5) de tamaño n = 10, n = 30 y n = 200. Para cada una, computar la media
-# y varianza muestral. ¿Qué observa?
+# Generar tres muestras de números aleatorios Exp(0,5) de tamaño n = 10, n = 30 y n = 200.
+# Para cada una, computar la media y varianza muestral. ¿Qué observa?
 
 
 # Primera muestra con n=10:
 val_n10, media, varianza = fn_generador_de_muestras_numeros_random_con_dist_exponencial(10,0.5)
+print("N=", 10)
 print("Media=", media)
 print("Varianza=", varianza)
 
 
 # Segunda muestra con n=30:
 val_n30, media, varianza = fn_generador_de_muestras_numeros_random_con_dist_exponencial(30,0.5)
+print("N=", 30)
 print("Media=", media)
 print("Varianza=", varianza)
 
 
 # Segunda muestra con n=200:
 val_n200, media, varianza = fn_generador_de_muestras_numeros_random_con_dist_exponencial(200,0.5)
+print("N=", 200)
 print("Media=", media)
 print("Varianza=", varianza)
 

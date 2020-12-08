@@ -1,6 +1,4 @@
 import math
-import numpy as np
-import pandas as pd
 from funciones.funciones import media_muestral
 from funciones.funciones import varianza_muestral
 from histogramas.histograma import frecuencia_relativa

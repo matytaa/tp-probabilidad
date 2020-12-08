@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import stats
+from scipy import stats
 import collections
 
 def graficar_frecuencia_relativa(x, res, titulo):

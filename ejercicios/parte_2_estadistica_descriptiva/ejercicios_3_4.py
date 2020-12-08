@@ -1,4 +1,3 @@
-import numpy as np
 import collections
 from ejercicios.parte_1_simulacion.binomial import obtener_muestra_binomial
 from ejercicios.parte_2_estadistica_descriptiva.funcion_de_distribucion_empirica import funcion_de_distribución_empirica_n
@@ -21,8 +20,6 @@ print("muestrar binomial: " + str(sorted(muestras_binomiales)))
 print("F de distribucion empirica: ", distribucion_empirica)
 graficar_diagrama_acumulada(distribucion_empirica)
 
-
-
 ## Parte 2 Ejercicio 4
 # A partir de la función de distribución empírica del punto anterior,
 # generar una nueva muestra de números aleatorios utilizando
@@ -32,11 +29,9 @@ graficar_diagrama_acumulada(distribucion_empirica)
 # Ejemplos de boostrap:
 # https://datasciencechalktalk.com/2019/11/12/bootstrap-sampling-an-implementation-with-python/
 # https://www.linkedin.com/learning/r-para-data-scientist-avanzado/bootstrap-en-r-muestreo?originalSubdomain=es
-valores = np.zeros(len(distribucion_empirica))
-for i in range(0, len(distribucion_empirica)):
-    valores[i] = distribucion_empirica[i][1]
+distribucion_empirica = distribucion_empirica[::-1]
 
-muestra_de_bootstrap = sampleo_bootstrap(valores, 50)
+muestra_de_bootstrap = sampleo_bootstrap(distribucion_empirica, casos)
 
 print ("Número + Cantidad de ocurrencias encontradas ==> %s" % collections.Counter(sorted(muestra_de_bootstrap)))
 print("\n")
@@ -47,4 +42,4 @@ print("media muestral array de valores ejericio 4 = ", media_muestral(muestra_de
 print("varianza muestral array de valores ejericio 3 = ", varianza_muestral(muestras_binomiales))
 print("varianza muestral array de valores ejericio 4 = ", varianza_muestral(muestra_de_bootstrap))
 
-frecuencia_relativa(muestra_de_bootstrap, ancho_de_barra = 0.001, titulo = 'Histograma de nueva muestra')
+frecuencia_relativa(muestra_de_bootstrap, ancho_de_barra = 0.1, titulo = 'Histograma de nueva muestra')

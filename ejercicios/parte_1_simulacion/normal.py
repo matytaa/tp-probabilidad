@@ -5,6 +5,8 @@ import math
 # Investigar como generar números aleatorios con distribución normal. Implementarlo.
 # Usamos el método de Box-muller para generar numeros random siguiendo una distribucion normal
 # https://es.wikipedia.org/wiki/M%C3%A9todo_de_Box-Muller
+# Box-muller se calcula tanto con el seno como el coseno, pero es indistinto con cual te quedas
+# en nuestro caso nos quedamos con el seno
 
 def random_gaussiano(mean, desviacion_estandar):
     theta = 2 * math.pi * np.random.uniform(0,1)
