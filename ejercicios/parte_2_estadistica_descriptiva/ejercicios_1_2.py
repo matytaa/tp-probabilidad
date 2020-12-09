@@ -27,6 +27,7 @@ print("Media=", media)
 print("Varianza=", varianza)
 
 # OBSERVACION: Conforme aumente la cantidad de muestra la esperanza y la varianza se deberían de estabilizar.
+# La esperanza muestral se acerca a la real y la varianza se hace mas pequeña
 
 
 ## Parte 2 Ejercicio 2

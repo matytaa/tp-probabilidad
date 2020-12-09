@@ -2,7 +2,7 @@ import collections
 from ejercicios.parte_1_simulacion.binomial import obtener_muestra_binomial
 from ejercicios.parte_2_estadistica_descriptiva.funcion_de_distribucion_empirica import funcion_de_distribución_empirica_n
 from ejercicios.parte_2_estadistica_descriptiva.funcion_de_distribucion_empirica import graficar_diagrama_acumulada
-from ejercicios.parte_2_estadistica_descriptiva.muestreo_de_bootstrap import sampleo_bootstrap
+from ejercicios.parte_2_estadistica_descriptiva.muestreo_de_bootstrap import generar_muestra_segun_cdf
 from funciones.funciones import media_muestral
 from funciones.funciones import varianza_muestral
 from histogramas.histograma import frecuencia_relativa
@@ -31,7 +31,7 @@ graficar_diagrama_acumulada(distribucion_empirica)
 # https://www.linkedin.com/learning/r-para-data-scientist-avanzado/bootstrap-en-r-muestreo?originalSubdomain=es
 distribucion_empirica = distribucion_empirica[::-1]
 
-muestra_de_bootstrap = sampleo_bootstrap(distribucion_empirica, casos)
+muestra_de_bootstrap = generar_muestra_segun_cdf(distribucion_empirica, casos)
 
 print ("Número + Cantidad de ocurrencias encontradas ==> %s" % collections.Counter(sorted(muestra_de_bootstrap)))
 print("\n")
@@ -42,4 +42,4 @@ print("media muestral array de valores ejericio 4 = ", media_muestral(muestra_de
 print("varianza muestral array de valores ejericio 3 = ", varianza_muestral(muestras_binomiales))
 print("varianza muestral array de valores ejericio 4 = ", varianza_muestral(muestra_de_bootstrap))
 
-frecuencia_relativa(muestra_de_bootstrap, ancho_de_barra = 0.1, titulo = 'Histograma de nueva muestra')
+frecuencia_relativa(muestra_de_bootstrap, ancho_de_barra = 0.1, titulo = 'Histograma')

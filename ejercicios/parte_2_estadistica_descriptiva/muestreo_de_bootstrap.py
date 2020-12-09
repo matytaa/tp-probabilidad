@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def sampleo_bootstrap(distribucion_empirica, casos):
+def generar_muestra_segun_cdf(distribucion_empirica, casos):
     muestra = []
     for i in range(0, casos):
         muestra.append(np.random.uniform(0, 1))

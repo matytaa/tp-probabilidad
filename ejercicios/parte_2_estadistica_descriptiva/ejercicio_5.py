@@ -1,12 +1,15 @@
 from ejercicios.parte_1_simulacion.binomial import obtener_muestra_binomial
 from ejercicios.parte_2_estadistica_descriptiva.funcion_de_distribucion_empirica import funcion_de_distribución_empirica_n
-from ejercicios.parte_2_estadistica_descriptiva.muestreo_de_bootstrap import sampleo_bootstrap
+from ejercicios.parte_2_estadistica_descriptiva.muestreo_de_bootstrap import generar_muestra_segun_cdf
 from funciones.funciones import media_muestral
 from funciones.funciones import varianza_muestral
 from histogramas.histograma import frecuencia_relativa
 
+#Repetir el experimento de los dos puntos anteriores con dos muestras aleatorias más generadas
+# con los mismos parámetros. ¿Qué conclusión saca?
+
 def repeticion_ejercicios_3_y_4():
-    casos = 50
+    casos = 200
     n = 10
     p = 0.3
 
@@ -14,19 +17,16 @@ def repeticion_ejercicios_3_y_4():
     distribucion_empirica = funcion_de_distribución_empirica_n(array_de_valores)
     distribucion_empirica = distribucion_empirica[::-1]
 
-    muestra = sampleo_bootstrap(distribucion_empirica, casos)
+    muestra = generar_muestra_segun_cdf(distribucion_empirica, casos)
 
-    print("media muestral array de valores 1 = ",
-          media_muestral(array_de_valores))
-    print("media muestral array de valores 2 = ",
-          media_muestral(muestra))
+    print("media muestral array de valores 1 = ", media_muestral(array_de_valores))
+    print("media muestral array de valores 2 = ", media_muestral(muestra))
 
-    print("varianza muestral array de valores 1 = ",
-          varianza_muestral(array_de_valores))
+    print("varianza muestral array de valores 1 = ", varianza_muestral(array_de_valores))
     print("varianza muestral array de valores 2 = ",
           varianza_muestral(muestra))
 
-    frecuencia_relativa(muestra, 0.1, titulo = 'Histograma de nueva muestra')
+    frecuencia_relativa(muestra, 0.1, titulo = 'Histograma')
 
 
 repeticion_ejercicios_3_y_4()

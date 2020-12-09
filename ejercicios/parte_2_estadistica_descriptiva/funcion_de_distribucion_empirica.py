@@ -1,11 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import defaultdict
-## Generar una muestra de números Bin(10, 0.3) de tamaño de muestra N = 50. Construir la función de distribución empírica de dicha muestra.
-# Referencia Funcion de Distribucion Empirica
-# https://machinelearningmastery.com/empirical-distribution-function-in-python/#:~:text=An%20empirical%20distribution%20function%20can,specific%20observations%20from%20the%20domain.
-# Referencia sobre Funcion de Distribucion Empirica
-# http://halweb.uc3m.es/esp/Personal/personas/jmmarin/esp/Boots/tema2BooPres.pdf
+## Generar una muestra de números Bin(10, 0.3) de tamaño de muestra N = 50.
+# Construir la función de distribución empírica de dicha muestra.
 
 def funcion_de_distribución_empirica_n(muestras):
     muestras = sorted(muestras)
