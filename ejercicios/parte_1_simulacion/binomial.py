@@ -23,11 +23,14 @@ def varianza(n, p):
     return n*p*(1-p)
 
 
-probabilidad = 0.4
-tamanio_de_la_muestra = 50
-exitos = binomial_random(tamanio_de_la_muestra, probabilidad)
-print("Numero de éxitos:" + str(exitos))
-print("Probabilidad:" + str(probabilidad))
-
-array_binomial = obtener_muestra_binomial(100, 6, 0.5)
+print("INICIO -> EJEMPLO DE FUNCIONAMIENTO \n")
+probabilidad_de_exito = 0.4
+tamanio_de_la_muestra = 100
+ensayos_bernoulli = 6
+exitos = binomial_random(tamanio_de_la_muestra, probabilidad_de_exito)
+array_binomial = obtener_muestra_binomial(tamanio_de_la_muestra, ensayos_bernoulli, probabilidad_de_exito)
 print(array_binomial)
+print("Tamaño de la muestra:" + str(tamanio_de_la_muestra))
+print("Numero de éxitos:" + str(exitos))
+print("Probabilidad de éxito:" + str(probabilidad_de_exito))
+print("FIN -> EJEMPLO DE FUNCIONAMIENTO \n")
