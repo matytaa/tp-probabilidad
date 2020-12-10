@@ -35,8 +35,14 @@ muestra_de_bootstrap = generar_muestra_de_boostrap(distribucion_empirica, casos)
 print ("Número + Cantidad de ocurrencias encontradas ==> %s" % collections.Counter(sorted(muestra_de_bootstrap)))
 print("\n")
 
+muestra = generar_muestra_de_boostrap(distribucion_empirica, casos)
+array_empirica = []
+for i in range(0, len(distribucion_empirica)):
+    array_empirica.append(distribucion_empirica[i][1])
+print("media array_empirica = ", media_muestral(array_empirica))
 print("media muestral = ", media_muestral(muestra_de_bootstrap))
 
+print("varianza array_empirica = ", varianza_muestral(array_empirica))
 print("varianza muestral = ", varianza_muestral(muestra_de_bootstrap))
 
 frecuencia_relativa(muestra_de_bootstrap, ancho_de_barra = 0.1, titulo = 'Histograma')

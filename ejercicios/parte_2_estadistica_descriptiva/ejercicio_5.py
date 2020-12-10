@@ -18,9 +18,13 @@ def repeticion_ejercicios_3_y_4():
     distribucion_empirica = distribucion_empirica[::-1]
 
     muestra = generar_muestra_de_boostrap(distribucion_empirica, casos)
-
+    array_empirica = []
+    for i in range(0, len(distribucion_empirica)):
+        array_empirica.append(distribucion_empirica[i][1])
+    print("media array_empirica = ", media_muestral(array_empirica))
     print("media muestral = ", media_muestral(muestra))
 
+    print("varianza array_empirica = ", varianza_muestral(array_empirica))
     print("varianza muestral = ", varianza_muestral(muestra))
 
     frecuencia_relativa(muestra, 0.1, titulo = 'Histograma')
@@ -32,6 +36,6 @@ repeticion_ejercicios_3_y_4()
 repeticion_ejercicios_3_y_4()
 
 # CONCLUSIÓN: acorde al tamaño de la muestra con el método de boostrap denotamos cual sería la
-# media poblacional y la varianza poblacional de la muestra al las medias y varianza teorica
+# media poblacional y la varianza poblacional de la muestra al las medias y varianza de la muestra
 
 
