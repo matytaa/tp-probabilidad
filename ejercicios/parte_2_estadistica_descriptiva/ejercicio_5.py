@@ -35,7 +35,6 @@ repeticion_ejercicios_3_y_4()
 # 2do conjunto de casos
 repeticion_ejercicios_3_y_4()
 
-# CONCLUSIÓN: acorde al tamaño de la muestra con el método de boostrap denotamos cual sería la
-# media poblacional y la varianza poblacional de la muestra al las medias y varianza de la muestra
-
-
+# CONCLUSIÓN: Se utiliza para aproximar la distribución en el muestreo de un estadístico.
+# Se usa frecuentemente para aproximar la diferencia entre el estimador y la esperanza muestral (sesgo)
+# tambien para aproximar o la varianza de un análisis estadístico
