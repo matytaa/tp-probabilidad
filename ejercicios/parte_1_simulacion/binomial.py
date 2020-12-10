@@ -16,12 +16,6 @@ def obtener_muestra_binomial(casos, n, p):
         valores[i - 1] = binomial_random(n, p)
     return valores
 
-def esperanza(n, p):
-    return n*p
-
-def varianza(n, p):
-    return n*p*(1-p)
-
 
 print("INICIO -> EJEMPLO DE FUNCIONAMIENTO \n")
 probabilidad_de_exito = 0.4

@@ -28,7 +28,6 @@ graficar_diagrama_acumulada(distribucion_empirica)
 
 # Ejemplos de boostrap:
 # https://datasciencechalktalk.com/2019/11/12/bootstrap-sampling-an-implementation-with-python/
-# https://www.linkedin.com/learning/r-para-data-scientist-avanzado/bootstrap-en-r-muestreo?originalSubdomain=es
 distribucion_empirica = distribucion_empirica[::-1]
 
 muestra_de_bootstrap = generar_muestra_de_boostrap(distribucion_empirica, casos)
@@ -36,10 +35,8 @@ muestra_de_bootstrap = generar_muestra_de_boostrap(distribucion_empirica, casos)
 print ("Número + Cantidad de ocurrencias encontradas ==> %s" % collections.Counter(sorted(muestra_de_bootstrap)))
 print("\n")
 
-print("media muestral array de valores ejericio 3 = ", media_muestral(muestras_binomiales))
-print("media muestral array de valores ejericio 4 = ", media_muestral(muestra_de_bootstrap))
+print("media muestral = ", media_muestral(muestra_de_bootstrap))
 
-print("varianza muestral array de valores ejericio 3 = ", varianza_muestral(muestras_binomiales))
-print("varianza muestral array de valores ejericio 4 = ", varianza_muestral(muestra_de_bootstrap))
+print("varianza muestral = ", varianza_muestral(muestra_de_bootstrap))
 
 frecuencia_relativa(muestra_de_bootstrap, ancho_de_barra = 0.1, titulo = 'Histograma')
