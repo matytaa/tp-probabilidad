@@ -21,10 +21,11 @@ def con_varianza_conocida(varianza, n, confianza, mu):
     sigma = math.sqrt(varianza)
     alfa = 1 - confianza
     alfa_sobre_2 = alfa / 2
-    z_alfa_sobre_2 = stats.norm.ppf(alfa_sobre_2)  # Busco el valor de la normal en tabla
+    valor_zeta = 1 - alfa_sobre_2
+    z_alfa_sobre_2 = stats.norm.ppf(valor_zeta)  # Busco el valor de la normal en tabla
     x_raya = mu  # media muestral
-    limite_inferior = x_raya + (z_alfa_sobre_2 * (sigma / math.sqrt(n)))
-    limite_superior = x_raya - (z_alfa_sobre_2 * (sigma / math.sqrt(n)))
+    limite_inferior = x_raya - (z_alfa_sobre_2 * (sigma / math.sqrt(n)))
+    limite_superior = x_raya + (z_alfa_sobre_2 * (sigma / math.sqrt(n)))
     return limite_inferior, limite_superior
 
 
