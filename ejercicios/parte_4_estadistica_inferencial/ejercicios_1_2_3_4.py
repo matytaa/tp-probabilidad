@@ -110,7 +110,10 @@ chi_cuadrado_calculado = (grados_libertad * s_cuadrado) / varianza
 
 h_nula =        "tiene que ser igual que σ^2 = 5"
 h_alternativa = "tiene que ser mayor que σ^2 > 5"
-
+print("\n")
+print("Para n=10")
+print(h_nula)
+print(h_alternativa)
 
 cumple = verificar_hipotesis_alternativa(chi_cuadrado_tabla, chi_cuadrado_calculado)
 
@@ -130,6 +133,11 @@ chi_cuadrado_calculado = (grados_libertad * s_cuadrado) / varianza
 
 h_nula =        "tiene que ser igual que σ^2 = 5"
 h_alternativa = "tiene que ser mayor que σ^2 > 5"
+
+print("\n")
+print("Para n=30")
+print(h_nula)
+print(h_alternativa)
 
 cumple = verificar_hipotesis_alternativa(chi_cuadrado_tabla, chi_cuadrado_calculado)
 
@@ -161,7 +169,7 @@ chi_cuadrado_calculado = (grados_libertad * s_cuadrado_l) / varianza_nueva
 
 beta = stats.chi2.cdf(chi_cuadrado_calculado, grados_libertad)
 print("La probabilidad de cometer error tipo II para n = 30 es:", beta)
-
+print("\n")
 # # Parte 4 Ejercicio 5
 # Agrupando los datos en subgrupos de longitud 0,5, probar a nivel 0,99 la hipótesis de que la muestra proviene
 # de una distribución normal.
