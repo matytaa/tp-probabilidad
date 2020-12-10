@@ -2,7 +2,7 @@ from random import choices
 from funciones.funciones import media_muestral
 
 
-def generar_muestra_segun_cdf(distribucion_empirica, casos):
+def generar_muestra_de_boostrap(distribucion_empirica, casos):
     medias = []
     largo = len(distribucion_empirica)
     valores = []

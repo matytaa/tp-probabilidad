@@ -1,6 +1,6 @@
 from ejercicios.parte_1_simulacion.binomial import obtener_muestra_binomial
 from ejercicios.parte_2_estadistica_descriptiva.funcion_de_distribucion_empirica import funcion_de_distribución_empirica_n
-from ejercicios.parte_2_estadistica_descriptiva.muestreo_de_bootstrap import generar_muestra_segun_cdf
+from ejercicios.parte_2_estadistica_descriptiva.muestreo_de_bootstrap import generar_muestra_de_boostrap
 from funciones.funciones import media_muestral
 from funciones.funciones import varianza_muestral
 from histogramas.histograma import frecuencia_relativa
@@ -17,7 +17,7 @@ def repeticion_ejercicios_3_y_4():
     distribucion_empirica = funcion_de_distribución_empirica_n(array_de_valores)
     distribucion_empirica = distribucion_empirica[::-1]
 
-    muestra = generar_muestra_segun_cdf(distribucion_empirica, casos)
+    muestra = generar_muestra_de_boostrap(distribucion_empirica, casos)
 
     print("media muestral array de valores 1 = ", media_muestral(array_de_valores))
     print("media muestral array de valores 2 = ", media_muestral(muestra))
