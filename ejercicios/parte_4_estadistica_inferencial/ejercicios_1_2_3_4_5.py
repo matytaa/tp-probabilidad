@@ -15,14 +15,12 @@ from funciones.funciones import verificar_hipotesis_alternativa
 # Obtener estimaciones puntuales de su media y varianza.
 
 val_e1_p4_10 = obtener_muestras_normales(10, 100, 5)
-print(val_e1_p4_10)
 
 media_muestral_n10 = media_muestral(val_e1_p4_10)
 print("Media muestral n=10: ",media_muestral_n10)
 print("Varianza muestral: ", varianza_muestral(val_e1_p4_10))
 
 val_e1_p4_30 = obtener_muestras_normales(30, 100, 5)
-print(val_e1_p4_30)
 
 media_muestral_n30 = media_muestral(val_e1_p4_30)
 print("Media muestral n=30: ", media_muestral_n30)
@@ -69,7 +67,8 @@ print("Intervalo de confianza del 98% se encuentra entre: " + str(limite_inferio
 N = 10
 valores = val_e1_p4_10
 mu = media_muestral_n10
-
+print("\n")
+print("Ejercicio 4.3 -------------")
 print("Valor de mu:",mu)
 
 confianza = 0.95
@@ -98,7 +97,8 @@ print("Intervalo de confianza del 98% se encuentra entre: "+ str(limite_inferior
 # # Parte 4 Ejercicio 4
 # Probar a nivel 0,99 la hipótesis de que la varianza sea σ² > 5. Calcular la probabilidad de cometer
 # error tipo II para la hipótesis alternativa σ² = 6.
-
+print("\n")
+print("Ejercicio 4.4 -------------")
 n = 10
 s_cuadrado = varianza_muestral(val_e1_p4_10)
 alfa = 1 - 0.99
@@ -152,10 +152,10 @@ varianza_nueva = 6
 grados_libertad = n - 1
 
 chi_cuadrado_tabla = 21.666 # se obtuvo por tabla para alfa = 0.01 y grados de libertad = 9
-s_cuadrado_l = (chi_cuadrado_tabla * varianza) / grados_libertad
-chi_cuadrado_calculado = (grados_libertad * s_cuadrado_l) / varianza_nueva
+s_cuadrado_limite = (chi_cuadrado_tabla * varianza) / grados_libertad
+chi_cuadrado_calculado = (grados_libertad * s_cuadrado_limite) / varianza_nueva
 
-beta = stats.chi2.cdf(chi_cuadrado_calculado, grados_libertad)
+beta = 1 - stats.chi2.cdf(chi_cuadrado_calculado, grados_libertad)
 print("La probabilidad de cometer error tipo II para n = 10 es:", beta)
 
 # Calcular la probabilidad de cometer error tipo II para la hipótesis alternativa σ² = 6. Para n = 30
@@ -164,17 +164,18 @@ varianza_nueva = 6
 grados_libertad = n - 1
 
 chi_cuadrado_tabla = 49.588 # se obtuvo por tabla para alfa = 0.01 y grados de libertad = 29
-s_cuadrado_l = (chi_cuadrado_tabla * varianza) / grados_libertad
-chi_cuadrado_calculado = (grados_libertad * s_cuadrado_l) / varianza_nueva
+s_cuadrado_limite = (chi_cuadrado_tabla * varianza) / grados_libertad
+chi_cuadrado_calculado = (grados_libertad * s_cuadrado_limite) / varianza_nueva
 
-beta = stats.chi2.cdf(chi_cuadrado_calculado, grados_libertad)
+beta = 1 - stats.chi2.cdf(chi_cuadrado_calculado, grados_libertad)
 print("La probabilidad de cometer error tipo II para n = 30 es:", beta)
 print("\n")
 # # Parte 4 Ejercicio 5
 # Agrupando los datos en subgrupos de longitud 0,5, probar a nivel 0,99 la hipótesis de que la muestra proviene
 # de una distribución normal.
 # Partiendo del ejercicio 1 sabemos que sigue una distribución N(100, 5) para la muestra de n = 30
-
+print("\n")
+print("Ejercicio 4.5 -------------")
 val_e1_p4_30 = sorted(val_e1_p4_30)
 n = 30
 ancho = 0.5
